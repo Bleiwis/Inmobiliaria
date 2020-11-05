@@ -117,7 +117,7 @@ class NuevoInmueble extends Component {
 						<Grid item xs={6} md={6}>
 							<TextField
 								name="pais"
-								label="País"
+								label="Estado"
 								fullWidth
 								onChange={this.entraDatoEnEstado}
 								value={this.state.inmueble.pais}
@@ -127,7 +127,7 @@ class NuevoInmueble extends Component {
 						<Grid item xs={6} md={6}>							
 							<TextField
 								name="ciudad"
-								label="Ciudad"
+								label="Región"
 								fullWidth
 								onChange={this.entraDatoEnEstado}
 								value={this.state.inmueble.ciudad}
@@ -137,7 +137,7 @@ class NuevoInmueble extends Component {
 						<Grid item xs={12} md={12}>
 							<TextField
 								name="direccion"
-								label="Dirección del inmueble"
+								label="Dirección del cultivo"
 								fullWidth
 								onChange={this.entraDatoEnEstado}
 								value={this.state.inmueble.direccion}
@@ -147,7 +147,7 @@ class NuevoInmueble extends Component {
 						<Grid item xs={12} md={12}>
 							<TextField
 								name="tipoInmueble"
-								label="Tipo de inmueble"
+								label="Tipo de cultivo"
 								fullWidth
 								multiline
 								onChange={this.entraDatoEnEstado}
@@ -158,7 +158,7 @@ class NuevoInmueble extends Component {
 						<Grid item xs={12} md={12}>
 							<TextField
 								name="descripcionInmueble"
-								label="Descripción del interior del Inmueble"
+								label="Descripción de la siembra"
 								fullWidth
 								multiline
 								onChange={this.entraDatoEnEstado}
@@ -178,7 +178,7 @@ class NuevoInmueble extends Component {
 							showPreviewsInDropzone={false}
 							showFileNamesInPreview={false}
 							Icon={AddPhotoAlternateIcon}
-							on
+							
 						/>
 					</Grid>
 

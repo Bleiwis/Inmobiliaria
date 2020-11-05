@@ -18,11 +18,11 @@ export const MenuIzquierda = ({ classes, usuario, textoUsuario, fotoUsuario, sal
         <List>
             <ListItem component={Link} button to="/auth/nuevoinmueble">
                 <i className="material-icons">add_box</i>
-                <ListItemText classes={{ primary: classes.ListItemText }} primary="Nuevo Inmueble" ></ListItemText>
+                <ListItemText classes={{ primary: classes.ListItemText }} primary="Nueva siembra" ></ListItemText>
             </ListItem>
             <ListItem component={Link} button to="">
                 <i className="material-icons">business</i>
-                <ListItemText classes={{ primary: classes.ListItemText }} primary="Inmuebles" ></ListItemText>
+                <ListItemText classes={{ primary: classes.ListItemText }} primary="Siembras" ></ListItemText>
             </ListItem>
             <ListItem component={Link} button to="">
                 <i className="material-icons">mail_outline</i>

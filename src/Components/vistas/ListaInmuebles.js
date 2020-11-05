@@ -37,6 +37,7 @@ class ListaInmuebles extends Component {
     inmuebles: [],
     textoBusqueda: ""
   }
+ 
   cambiarBusquedaTexto = e => {
     const self = this;
     self.setState({
@@ -111,6 +112,8 @@ class ListaInmuebles extends Component {
     })
   }
 
+
+
   render() {
     return (
       <Container style={style.cardGrid}>
@@ -168,7 +171,9 @@ class ListaInmuebles extends Component {
                       <Button
                         size="small"
                         color="primary"
-                        onClick={() => this.eliminarInmueble(card.id)}>
+                        //onClick={handleOpen}
+                        onClick={() => this.eliminarInmueble(card.id)}
+                        >
 
                         Eliminar
                         </Button>
