@@ -37,7 +37,7 @@ class ListaInmuebles extends Component {
     inmuebles: [],
     textoBusqueda: ""
   }
- 
+
   cambiarBusquedaTexto = e => {
     const self = this;
     self.setState({
@@ -111,7 +111,9 @@ class ListaInmuebles extends Component {
       inmuebles: inmuebleListaNueva
     })
   }
-
+  editarInmueble = id => {
+    this.props.history.push("auth/id" + id)
+  }
 
 
   render() {
@@ -126,7 +128,7 @@ class ListaInmuebles extends Component {
               <Typography color="textPrimary">Mis Inmuebles</Typography>
             </Breadcrumbs>
           </Grid>
-          <Grid item xs={12} sm={3} style={style.gridTextfield}>
+          <Grid item xs={12} sm={6} style={style.gridTextfield}>
             <TextField
               fullWidth
               InputLabelProps={{
@@ -162,8 +164,10 @@ class ListaInmuebles extends Component {
 
                     <CardActions>
                       <Button
+                        onClick={() => this.editarInmueble(card.id)}
                         size="small"
-                        color="primary">
+                        color="primary"
+                      >
 
                         Editar
                         </Button>
@@ -173,7 +177,7 @@ class ListaInmuebles extends Component {
                         color="primary"
                         //onClick={handleOpen}
                         onClick={() => this.eliminarInmueble(card.id)}
-                        >
+                      >
 
                         Eliminar
                         </Button>

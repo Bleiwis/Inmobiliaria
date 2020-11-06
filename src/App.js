@@ -13,6 +13,7 @@ import RutaAutenticada from "./Components/Seguridad/RutaAutenticada";
 import PerfilUsuario from "./Components/Seguridad/PerfilUsuario";
 import NuevoInmueble from "./Components/vistas/Nuevoinmueble";
 import ListaInmuebles from "./Components/vistas/ListaInmuebles";
+import EditarInmueble from "./Components/vistas/EditarInmueble";
 
 
 
@@ -73,6 +74,10 @@ function App(props) {
                 exact path="/auth/nuevoinmueble"
                 autenticadoFirebase={firebase.auth.currentUser}
                 component={NuevoInmueble} />
+                <RutaAutenticada
+                exact path="/auth/:id"
+                autenticadoFirebase={firebase.auth.currentUser}
+                component={EditarInmueble} />
 
               <Route path="/auth/registrarUsuario" exact component={RegistrarUsuario}></Route>
               <Route path="/auth/login" exact component={Login}></Route>

@@ -114,7 +114,7 @@ class NuevoInmueble extends Component {
 								<Typography color="textPrimary">Nuevo Inmueble</Typography>
 							</Breadcrumbs>
 						</Grid>
-						<Grid item xs={6} md={6}>
+						<Grid item xs={6} md={6}>						
 							<TextField
 								name="pais"
 								label="Estado"
