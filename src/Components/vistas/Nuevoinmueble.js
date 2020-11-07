@@ -73,7 +73,7 @@ class NuevoInmueble extends Component {
 			archivos[key].alias = (nombre.split(".")[0] + "_" + valorDinamico + "." + extension).replace(/\s/g, "_").toLocaleLowerCase();
 		})
 
-		const textoBusqueda = inmueble.direccion + ' ' + inmueble.ciudad + ' ' + inmueble.pais;
+		const textoBusqueda = inmueble.direccion + ' ' + inmueble.ciudad + ' ' + inmueble.pais + ' ' + inmueble.tipoInmueble;
 		let keywords = crearKeyword(textoBusqueda);
 
 		this.props.firebase.guardarFotosInmueble(archivos).then(arregloUrls => {
@@ -95,11 +95,11 @@ class NuevoInmueble extends Component {
 		});
 	};
 
-	handleChange(archivos){
-    this.setState({
-      archivos: archivos
-    });
-  }
+	handleChange(archivos) {
+		this.setState({
+			archivos: archivos
+		});
+	}
 
 	render() {
 		return (
@@ -111,10 +111,10 @@ class NuevoInmueble extends Component {
 								<Link color="inherit" style={style.link} href="/">
 									<HomeIcon style={style.homeIcon} />Inicio
                 </Link>
-								<Typography color="textPrimary">Nuevo Inmueble</Typography>
+								<Typography color="textPrimary">Nuevo Cultivo</Typography>
 							</Breadcrumbs>
 						</Grid>
-						<Grid item xs={6} md={6}>						
+						<Grid item xs={6} md={6}>
 							<TextField
 								name="pais"
 								label="Estado"
@@ -124,7 +124,7 @@ class NuevoInmueble extends Component {
 							/>
 						</Grid>
 
-						<Grid item xs={6} md={6}>							
+						<Grid item xs={6} md={6}>
 							<TextField
 								name="ciudad"
 								label="Región"
@@ -178,7 +178,7 @@ class NuevoInmueble extends Component {
 							showPreviewsInDropzone={false}
 							showFileNamesInPreview={false}
 							Icon={AddPhotoAlternateIcon}
-							
+
 						/>
 					</Grid>
 

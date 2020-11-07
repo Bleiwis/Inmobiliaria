@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Breadcrumbs, Button, Card, CardActions, CardContent, CardMedia, Container, Grid, Link, Paper, TextField, Typography } from '@material-ui/core';
+import { Breadcrumbs, Button, Card, CardActions, CardContent, CardMedia, Container, Grid, InputAdornment, Link, Paper, TextField, Typography } from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home';
 import logo from '../../logo.svg';
 import { consumerFirebase } from '../../Server';
+import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
 const style = {
   cardGrid: {
     paddingTop: 8,
@@ -22,7 +23,8 @@ const style = {
   card: {
     height: "100%",
     display: "flex",
-    flexDirection: "column"
+    flexDirection: "column",
+    
   },
   cardMedia: {
     paddingTop: "56.25%"
@@ -125,7 +127,7 @@ class ListaInmuebles extends Component {
               <Link color="inherit" style={style.link} href="/">
                 <HomeIcon /> Inicio
             </Link>
-              <Typography color="textPrimary">Mis Inmuebles</Typography>
+              <Typography color="textPrimary">Mis Cultivos</Typography>
             </Breadcrumbs>
           </Grid>
           <Grid item xs={12} sm={6} style={style.gridTextfield}>
@@ -136,17 +138,25 @@ class ListaInmuebles extends Component {
               }}
               name="textoBusqueda"
               variant="outlined"
-              label="Ingrese el inmueble a buscar"
+              label="Ingrese el cultivo a buscar"
+              placeholder="Puedes buscar por estado, dirección o cultivo"
               onChange={this.cambiarBusquedaTexto}
               value={this.state.textoBusqueda}
+              inputProps={{
+                startAdorment:(
+                  <InputAdornment position ='start'>
+                    <SearchRoundedIcon/>
+                  </InputAdornment>
+                ),
+              }}
             />
           </Grid>
 
           <Grid item xs={12} sm={12} style={style.gridTextfield} >
             <Grid container spacing={4}>
               {this.state.inmuebles.map(card => (
-                <Grid item key={card.id} xs={12} sm={3}>
-                  <Card style={style.card}>
+                <Grid item key={card.id} xs={12} sm={4}>
+                  <Card style={style.card} elevation={3}>
                     <CardMedia style={style.cardMedia}
                       image={
                         card.fotos
@@ -154,7 +164,7 @@ class ListaInmuebles extends Component {
                             ? card.fotos[0]
                             : logo
                           : logo}
-                      title="Mi Inmueble" />
+                      title="Mi Cultivo" />
 
                     <CardContent style={style.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
